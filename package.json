@@ -1,0 +1,63 @@
+{
+  "name": "pdf2txt-diff",
+  "displayName": "PDF2Txt-Diff",
+  "description": "A simple extension to compare two PDF files and show the differences in a side-by-side view.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gjlubbertsen/pdf2txt-diff"},
+  "activationEvents": [],
+  "extensionKind": [
+    "ui",
+    "workspace"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "pdf2text-explorer",
+          "title": "PDF compare",
+          "icon": "media/dep.svg"
+        }
+      ]
+    },
+    "views": {
+      "pdf2text-explorer": [
+        {
+          "type": "webview",
+          "id": "pdf2text.PanelView",
+          "name": ""
+        }
+      ]
+    },
+    "commands": []
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run -S esbuild-base -- --minify",
+    "esbuild-base": "rimraf out && esbuild ./src/extension.ts --bundle --outfile=out/extension.js --external:vscode --format=cjs --platform=node",
+    "build": "npm run -S esbuild-base -- --sourcemap",
+    "watch": "npm run -S esbuild-base -- --sourcemap --watch",
+    "test-compile": "tsc -p ./"
+  },
+  "dependencies": {
+    "@types/pdfjs-dist": "^2.10.378",
+    "@types/vscode": "^1.46.0",
+    "pdfjs-dist": "1.10.100"
+  },
+  "devDependencies": {
+    "@types/node": "^16.18.34",
+    "@types/vscode": "^1.73.0",
+    "@typescript-eslint/eslint-plugin": "^6.7.0",
+    "@typescript-eslint/parser": "^6.7.0",
+    "esbuild": "^0.19.11",
+    "eslint": "^8.26.0",
+    "typescript": "^5.3.2"
+  }
+}
