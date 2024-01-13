@@ -2,13 +2,34 @@
   "name": "pdf2txt-diff",
   "displayName": "PDF2Txt-Diff",
   "description": "A simple extension to compare two PDF files and show the differences in a side-by-side view.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.74.0"
   },
+  "publisher": "gjlubbertsen",
+  "author": {
+    "name": "Gerrit-Jan Lubbertsen",
+    "email": "gerrit-jan@lubbertsen.com"
+  },
+  "galleryBanner": {
+    "color": "#264653",
+    "theme": "dark"
+  },
+  "keywords": [
+    "pdf",
+    "compare",
+    "diff",
+    "text",
+    "txt"
+  ],
+  "qna": false,
   "categories": [
+    "Visualization",
     "Other"
   ],
+  "pricing": "Free",
+
+  "license": "SEE LICENSE IN LICENSE.txt",
   "repository": {
     "type": "git",
     "url": "https://github.com/gjlubbertsen/pdf2txt-diff"},
@@ -18,13 +39,14 @@
     "workspace"
   ],
   "main": "./out/extension.js",
+  "icon": "icon.png",
   "contributes": {
     "viewsContainers": {
       "activitybar": [
         {
           "id": "pdf2text-explorer",
           "title": "PDF compare",
-          "icon": "media/dep.svg"
+          "icon": "media/pdf.svg"
         }
       ]
     },
